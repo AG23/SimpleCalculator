@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SimpleCalculator
 {
@@ -9,30 +10,31 @@ namespace SimpleCalculator
             while (true)
             {
                 int a, b;
-                int c;
-                Console.WriteLine("enter 1 number ");
-                a = int.Parse(Console.ReadLine());
-                Console.WriteLine("Choose action ");
-                Console.WriteLine("Example: +,-,/,*,%");
-                c = Console.ReadLine()[0];
-                Console.WriteLine("enter 2 number ");
-                b = int.Parse(Console.ReadLine());
+                string c;
+                String s;
+                s = Console.ReadLine();
+                String[] exp = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var operation = s[0];
+                var args = s.Skip(1);
+                a = int.Parse(exp[1]);
+                b = int.Parse(exp[2]);
+                c = exp[0];
                 switch (c)
                 {
-                    case '+':
+                    case "sum":
                         Console.WriteLine("{0}+{1}={2}", a, b, ((float)a + b));
                         break;
-                    case '-':
+                    case "sub":
                         Console.WriteLine("{0}-{1}={2}", a, b, ((float)a - b));
                         break;
-                    case '/':
+                    case "div":
                         Console.WriteLine("{0}/{1}={2}", a, b, ((float)a / b));
                         break;
-                    case '*':
+                    case "mul":
                         Console.WriteLine("{0}*{1}={2}", a, b, ((float)a * b));
                         break;
                 }
             }
         }
+        }
     }
-}
