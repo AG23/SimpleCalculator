@@ -10,6 +10,15 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
+            var processor = new InputProcessor();
+            processor.Run(); 
+        }
+    }
+
+    internal class InputProcessor
+    {
+        public void Run()
+        {
             int a, b;
             int c;
             Console.WriteLine("enter 1 number ");
