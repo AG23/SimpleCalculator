@@ -19,6 +19,8 @@ namespace SimpleCalculator
     {
         public void Run()
         {
+            while (true)
+            {
             int a, b;
             int c;
             Console.WriteLine("enter 1 number ");
@@ -43,8 +45,8 @@ namespace SimpleCalculator
                     Console.WriteLine("{0}*{1}={2}", a, b, ((float)a * b));
                     break;
             }
-            Console.WriteLine("Press any key to exit");
-            Console.ReadKey();
+            }
+          
         }
     }
 }
