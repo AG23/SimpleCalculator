@@ -10,8 +10,15 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            var processor = new InputProcessor();
-            processor.Run(); 
+            try
+            {
+                var processor = new InputProcessor();
+                processor.Run();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Критическая ошибка: {0}", ex.Message);
+            }
         }
-    }  
-        }
+    }
+}
