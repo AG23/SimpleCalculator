@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
-    class SubOperation
+    class SubOperation : MathProcessor
     {
-        public void Execute(List<string> parameters)
-        {
-
-        }
+        
     }
 }

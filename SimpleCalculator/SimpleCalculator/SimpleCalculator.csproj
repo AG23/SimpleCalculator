@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DivOperation.cs" />
     <Compile Include="InputProcessor.cs" />
+    <Compile Include="MathProcessor.cs" />
     <Compile Include="MulOperation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
