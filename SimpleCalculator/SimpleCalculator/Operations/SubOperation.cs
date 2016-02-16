@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
-    class DivOperation : MathProcessor
+    class SubOperation : OperationBase
     {
         
     }
