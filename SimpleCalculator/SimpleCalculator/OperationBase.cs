@@ -8,9 +8,7 @@ namespace SimpleCalculator
 {
     public abstract class OperationBase
     {
-        public void Execute(List<string> parameters)
-        {
-
-        }
+        public abstract void Execute(List<string> parameters);
+        float firstNumber, secondNumber;
     }
 }

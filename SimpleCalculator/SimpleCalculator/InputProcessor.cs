@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SimpleCalculator
@@ -17,21 +18,27 @@ namespace SimpleCalculator
                 float firstNumber, secondNumber;
                 firstNumber = float.Parse(exp[1]);
                 secondNumber = float.Parse(exp[2]);
+
+                OperationBase Sum = new SumOperation();
+                OperationBase Sub = new SubOperation();
+                OperationBase Mul = new MulOperation();
+                OperationBase Div = new DivOperation();
+
                 string action;
                 action = exp[0];
                 switch (action)
                 {
                     case "sum":
-                        Console.WriteLine("{0}+{1}={2}", firstNumber, secondNumber, (firstNumber + secondNumber));
+                        Sum.Execute(List < string > parameters);
                         break;
                     case "sub":
-                        Console.WriteLine("{0}-{1}={2}", firstNumber, secondNumber, (firstNumber - secondNumber));
+                        Sub.Execute(List < string > parameters);
                         break;
                     case "div":
-                        Console.WriteLine("{0}/{1}={2}", firstNumber, secondNumber, (firstNumber / secondNumber));
+                        Div.Execute(List < string > parameters);
                         break;
                     case "mul":
-                        Console.WriteLine("{0}*{1}={2}", firstNumber, secondNumber, (firstNumber * secondNumber));
+                        Mul.Execute(List < string > parameters);
                         break;
                 }
             }
