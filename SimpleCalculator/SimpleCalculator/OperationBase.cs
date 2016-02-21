@@ -9,6 +9,6 @@ namespace SimpleCalculator
     public abstract class OperationBase
     {
         public abstract void Execute(List<string> parameters);
-        float firstNumber, secondNumber;
+        protected float firstNumber, secondNumber;
     }
 }
