@@ -19,30 +19,28 @@ namespace SimpleCalculator
                 firstNumber = float.Parse(exp[1]);
                 secondNumber = float.Parse(exp[2]);
 
+                string action;
+                action = exp[0];
                 OperationBase calculator;
-
-                if (operation == SumOperation.operatorName())
+                switch (action)
                 {
-                    calculator = new SumOperation();
+                    case "sum":
+                        calculator = new SumOperation();
+                        calculator.Execute(exp.ToList<String>());
+                        break;
+                    case "sub":
+                        calculator = new SubOperation();
+                        calculator.Execute(exp.ToList<String>());
+                        break;
+                    case "div":
+                        calculator = new DivOperation();
+                        calculator.Execute(exp.ToList<String>());
+                        break;
+                    case "mul":
+                        calculator = new MulOperation();
+                        calculator.Execute(exp.ToList<String>());
+                        break;
                 }
-                else if (operation == SubOperation.operatorName())
-                {
-                    calculator = new SubOperation();
-                }
-                else if (operation == MulOperation.operatorName())
-                {
-                    calculator = new MulOperation();
-                }
-                else if (operation == DivOperation.operatorName())
-                {
-                    calculator = new DivOperation();
-                }
-                else
-                {
-                    Console.WriteLine("error");
-                    break;
-                }
-                calculator.Execute(exp.ToList<String>());
             }
         }
     }
